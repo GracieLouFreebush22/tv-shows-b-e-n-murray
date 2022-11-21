@@ -1,4 +1,4 @@
-interface IEpisode {
+export interface IEpisode {
   id: number;
   url: string;
   name: string;
@@ -19,14 +19,16 @@ interface IEpisode {
 }
 
 interface IEpisodeListViewProps {
-  episode: IEpisode;
+  listOfEpisodes: IEpisode[];
+  favFood: string;
 }
 
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
   return (
     <div>
       <> This is Episode List View </>
-      <ul> {props.episode.name} </ul>
+      <p>{props.listOfEpisodes[7].name}</p>
+      <p>{props.favFood}</p>
     </div>
   );
 }
