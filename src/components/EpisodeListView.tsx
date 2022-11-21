@@ -1,4 +1,3 @@
-
 export interface IEpisode {
   id: number;
   url: string;
@@ -20,8 +19,8 @@ export interface IEpisode {
 }
 
 interface IEpisodeListViewProps {
-  listOfEpisodes: IEpisode[]
-  favFood: string
+  listOfEpisodes: IEpisode[];
+  favFood: string;
 }
 
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
