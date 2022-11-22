@@ -26,7 +26,10 @@ function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
   return (
     <div>
       <> This is Episode List View </>
-      <p>{props.listOfEpisodes[7].name}</p>
+      <div>{props.listOfEpisodes.map((epItem) => (
+        <OneEpisodeView episode={epItem} key={epItem.id} /> )
+        )};
+      </div>
     </div>
   );
 }
