@@ -5,6 +5,7 @@ interface OneEpisodeViewProps {
 }
 
 function OneEpisodeView(props: OneEpisodeViewProps): JSX.Element {
+
   return (
     <div>
       <div>
@@ -13,12 +14,20 @@ function OneEpisodeView(props: OneEpisodeViewProps): JSX.Element {
           {GenerateEpisodeCode(props.episode.season, props.episode.number)}
         </h2>
         <div>
-          <img src={props.episode.image.medium} alt="" />
-          <p>{props.episode.summary}</p>
+          <img src={props.episode.image.medium} alt=""/>
+          <p>
+            {removeHTMLTags(props.episode.summary)}
+          </p>
         </div>
       </div>
     </div>
   );
+}
+export function removeHTMLTags(epSummary: string): string {
+  if (epSummary.includes("<p>" && "</p>")) { //"<p> Hello </p>"
+    return epSummary.slice(3,-4) // (3 from the start, 4 from the end)
+  }
+  return epSummary
 }
 
 export function GenerateEpisodeCode(
