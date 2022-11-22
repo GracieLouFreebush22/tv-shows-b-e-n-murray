@@ -1,3 +1,5 @@
+import OneEpisodeView from "./OneEpisodeView";
+
 export interface IEpisode {
   id: number;
   url: string;
@@ -25,7 +27,6 @@ interface IEpisodeListViewProps {
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
   return (
     <div>
-      <> This is Episode List View </>
       <div>{props.listOfEpisodes.map((epItem) => (
         <OneEpisodeView episode={epItem} key={epItem.id} /> )
         )};
