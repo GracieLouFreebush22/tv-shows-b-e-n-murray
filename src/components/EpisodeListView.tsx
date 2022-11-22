@@ -1,4 +1,5 @@
 import OneEpisodeView from "./OneEpisodeView";
+import { useState } from "react";
 
 export interface IEpisode {
   id: number;
@@ -25,18 +26,32 @@ interface IEpisodeListViewProps {
 }
 
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
-  return (
+  const [searchText, setSearchText]= useState("")
 
+  return (
+    <div>
+      <input value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+    
       <div className= "list-view">
         <ul>
-        {props.listOfEpisodes.map((epItem) => (
+        {findMatchingEps(searchText, props.listOfEpisodes).map((epItem) => (
           < OneEpisodeView episode={epItem} key={epItem.id} />
         ))}
         ;
         </ul> 
       </div>
-
+    </div>
   );
 }
 
-export default EpisodeListView;
+
+function findMatchingEps( message: string, filteredArr: IEpisode[]) {
+  if (!message){
+    return filteredArr
+  } 
+  return filteredArr.filter(episode => episode.name.toLowerCase().includes(message.toLowerCase()) || 
+  episode.summary.toLowerCase().includes(message.toLowerCase()))
+}
+
+
+export default EpisodeListView
