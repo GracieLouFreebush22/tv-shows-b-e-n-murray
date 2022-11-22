@@ -9,14 +9,14 @@ function App(): JSX.Element {
         <h1 className="header"> Game Of Thrones </h1>
         <div className="all-view">
           <EpisodeListView listOfEpisodes={episodes} />
-          <div>
-            <h6>
-              <a href="https://www.tvmaze.com/shows/82/game-of-thrones/episodes">
-                Link to Game of Thrones Episodes
-              </a>
-            </h6>
-          </div>
         </div>
+      </div>
+      <div className="ep-link">
+        <h6>
+          <a href="https://www.tvmaze.com/shows/82/game-of-thrones/episodes">
+            Link to Game of Thrones Episodes
+          </a>
+        </h6>
       </div>
     </>
   );

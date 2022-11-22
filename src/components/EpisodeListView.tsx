@@ -30,14 +30,19 @@ function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
 
   return (
     <div>
-      <input
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
-      <p>
-        {" "}
-        Episodes Displayed: {epCount(searchText, props.listOfEpisodes)} / 73
-      </p>
+      <div>
+        <input
+          className="search-bar"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+      </div>
+      <div>
+        <p>
+          {" "}
+          Episodes Displayed: {epCount(searchText, props.listOfEpisodes)} / 73
+        </p>
+      </div>
       <div className="list-view">
         <ul>
           {findMatchingEps(searchText, props.listOfEpisodes).map((epItem) => (
