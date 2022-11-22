@@ -5,7 +5,7 @@ function App(): JSX.Element {
   return (
     <>
       <div>
-        <EpisodeListView listOfEpisodes={episodes}/>
+        <EpisodeListView listOfEpisodes={episodes} />
       </div>
     </>
   );
