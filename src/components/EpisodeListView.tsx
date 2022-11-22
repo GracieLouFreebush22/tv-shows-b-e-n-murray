@@ -26,14 +26,16 @@ interface IEpisodeListViewProps {
 
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
   return (
-    <div className= "oneEpItem">
-      <div >
+
+      <div className= "list-view">
+        <ul>
         {props.listOfEpisodes.map((epItem) => (
-          <OneEpisodeView episode={epItem} key={epItem.id} />
+          < OneEpisodeView episode={epItem} key={epItem.id} />
         ))}
         ;
+        </ul> 
       </div>
-    </div>
+
   );
 }
 

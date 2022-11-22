@@ -5,8 +5,9 @@ import "./style.css"
 function App(): JSX.Element {
   return (
     <>
+    <div className= "app">
       <h1 className= "header"> Game Of Thrones </h1>
-      <div>
+      <div className= "all-view">
         <EpisodeListView listOfEpisodes={episodes} />
         <div>
           <h6>
@@ -16,6 +17,7 @@ function App(): JSX.Element {
           </h6>
         </div>
       </div>
+    </div>
     </>
   );
 }
