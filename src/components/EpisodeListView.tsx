@@ -31,7 +31,7 @@ function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
   return (
     <div>
       <input value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-    
+      <p> Episodes Displayed: {findMatchingEps(searchText, props.listOfEpisodes).length} / 73</p>
       <div className= "list-view">
         <ul>
         {findMatchingEps(searchText, props.listOfEpisodes).map((epItem) => (
