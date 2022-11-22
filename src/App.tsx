@@ -9,7 +9,7 @@ function App(): JSX.Element {
         <div>
           <h6>
             <a href="https://www.tvmaze.com/shows/82/game-of-thrones/episodes">
-              Link to Game of Thrones Episodes{" "}
+              Link to Game of Thrones Episodes
             </a>
           </h6>
         </div>
