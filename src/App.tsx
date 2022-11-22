@@ -1,9 +1,11 @@
 import episodes from "./episodes.json";
 import EpisodeListView from "./components/EpisodeListView";
+import "./style.css"
 
 function App(): JSX.Element {
   return (
     <>
+      <h1 className= "header"> Game Of Thrones </h1>
       <div>
         <EpisodeListView listOfEpisodes={episodes} />
         <div>

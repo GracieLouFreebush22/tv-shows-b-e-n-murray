@@ -1,5 +1,6 @@
 import { IEpisode } from "./EpisodeListView";
 
+
 interface OneEpisodeViewProps {
   episode: IEpisode;
 }
@@ -7,7 +8,7 @@ interface OneEpisodeViewProps {
 function OneEpisodeView(props: OneEpisodeViewProps): JSX.Element {
   return (
     <div>
-      <div>{props.episode.name}</div>
+      <div >{props.episode.name}</div>
       <div>
         {GenerateEpisodeCode(props.episode.season, props.episode.number)}
       </div>
