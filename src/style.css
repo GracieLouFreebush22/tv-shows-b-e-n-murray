@@ -1,18 +1,17 @@
-.app{
-    background-color: rgb(190, 190, 240);
-    text-align: center;
+.app {
+  background-color: rgb(190, 190, 240);
+  text-align: center;
 }
-.header{
-   text-align: center; 
-   
+.header {
+  text-align: center;
 }
-.all-view{
-    font-family:Arial, Helvetica, sans-serif;
-    display: flex;
+.all-view {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
 }
 
-.list-view{
-    columns: 2;
-    width: 1000px;
-    color: rgb(6, 2, 39);
+.list-view {
+  columns: 2;
+  width: 1000px;
+  color: rgb(6, 2, 39);
 }

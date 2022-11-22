@@ -26,32 +26,43 @@ interface IEpisodeListViewProps {
 }
 
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
-  const [searchText, setSearchText]= useState("")
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div>
-      <input value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-      <p> Episodes Displayed: {findMatchingEps(searchText, props.listOfEpisodes).length} / 73</p>
-      <div className= "list-view">
+      <input
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+      />
+      <p>
+        {" "}
+        Episodes Displayed: {epCount(searchText, props.listOfEpisodes)} / 73
+      </p>
+      <div className="list-view">
         <ul>
-        {findMatchingEps(searchText, props.listOfEpisodes).map((epItem) => (
-          < OneEpisodeView episode={epItem} key={epItem.id} />
-        ))}
-        ;
-        </ul> 
+          {findMatchingEps(searchText, props.listOfEpisodes).map((epItem) => (
+            <OneEpisodeView episode={epItem} key={epItem.id} />
+          ))}
+          ;
+        </ul>
       </div>
     </div>
   );
 }
 
-
-function findMatchingEps( message: string, filteredArr: IEpisode[]) {
-  if (!message){
-    return filteredArr
-  } 
-  return filteredArr.filter(episode => episode.name.toLowerCase().includes(message.toLowerCase()) || 
-  episode.summary.toLowerCase().includes(message.toLowerCase()))
+export function epCount(message: string, filteredArr: IEpisode[]): number {
+  return findMatchingEps(message, filteredArr).length;
 }
 
+function findMatchingEps(message: string, filteredArr: IEpisode[]) {
+  if (!message) {
+    return filteredArr;
+  }
+  return filteredArr.filter(
+    (episode) =>
+      episode.name.toLowerCase().includes(message.toLowerCase()) ||
+      episode.summary.toLowerCase().includes(message.toLowerCase())
+  );
+}
 
-export default EpisodeListView
+export default EpisodeListView;

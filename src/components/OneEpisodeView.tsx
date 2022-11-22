@@ -1,22 +1,23 @@
 import { IEpisode } from "./EpisodeListView";
 
-
 interface OneEpisodeViewProps {
   episode: IEpisode;
 }
 
 function OneEpisodeView(props: OneEpisodeViewProps): JSX.Element {
   return (
-    <div > 
-    <div >
-      <h2>{props.episode.name}: 
-      {GenerateEpisodeCode(props.episode.season, props.episode.number)}</h2>
+    <div>
       <div>
-        <img src={props.episode.image.medium} alt="" />
-        <p>{props.episode.summary}</p>
+        <h2>
+          {props.episode.name}:
+          {GenerateEpisodeCode(props.episode.season, props.episode.number)}
+        </h2>
+        <div>
+          <img src={props.episode.image.medium} alt="" />
+          <p>{props.episode.summary}</p>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
 
