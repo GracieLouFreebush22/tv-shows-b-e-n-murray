@@ -9,7 +9,7 @@ function App(): JSX.Element {
     <>
       <div>
         <> Hello World</>;
-        <EpisodeListView listOfEpisodes={episodes} favFood={"pizza"} />
+        <EpisodeListView listOfEpisodes={episodes}/>
       </div>
     </>
   );

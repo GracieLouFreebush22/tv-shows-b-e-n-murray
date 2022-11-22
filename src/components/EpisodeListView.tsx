@@ -20,7 +20,6 @@ export interface IEpisode {
 
 interface IEpisodeListViewProps {
   listOfEpisodes: IEpisode[];
-  favFood: string;
 }
 
 function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
@@ -28,7 +27,6 @@ function EpisodeListView(props: IEpisodeListViewProps): JSX.Element {
     <div>
       <> This is Episode List View </>
       <p>{props.listOfEpisodes[7].name}</p>
-      <p>{props.favFood}</p>
     </div>
   );
 }
