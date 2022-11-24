@@ -1,21 +1,27 @@
 // import episodes from "./episodes.json";
 import EpisodeListView, { IEpisode } from "./components/EpisodeListView";
 import "./style.css";
+import { useState } from "react";
 
-function printGOTEpInfo(): Promise<T> {
-    return fetch("https://api.tvmaze.com/shows/82/episodes")
-    .then((response) => response.json())
-    .then((episodes: IEpisode[]) => {
-      console.log(episodes);
-    });
-  }
+
 function App(): JSX.Element {
+  const [episodes, setEpisodes] = useState<IEpisode[]>([])
+  function fetchAndStoreEpisodes() {
+    fetch("https://api.tvmaze.com/shows/82/episodes")
+      .then((response) => response.json())
+      .then((fetchedEpisodes: IEpisode[]) => {
+        console.log(fetchedEpisodes);
+        setEpisodes(fetchedEpisodes);
+      })
+  }
+
   return (
     <>
       <div className="app">
         <h1 className="header"> Game Of Thrones </h1>
         <div className="all-view">
-          <EpisodeListView listOfEpisodes={printGOTEpInfo()} />
+          <EpisodeListView listOfEpisodes={episodes} />
+          <button onClick={fetchAndStoreEpisodes}>get them eps</button>
         </div>
       </div>
       <div className="ep-link">
